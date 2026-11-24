@@ -1,18 +1,16 @@
-##    key = int(input("Key = "))
-##    encryption = [input("Say a message to encrypt: ")]
-##    encrypt = ""
-##    while encrypt.lower() != "stop":
-##        encrypt = input("Say a message to encrypt: ")
-##        encryption.append(encrypt)
+key = int(input("Key = "))
+encrypt = input("Say a message to encrypt: ")
+encryption = []
 
-lines = []
-print("Enter your text (press Enter on an empty line to finish):")
+def scrambleIt(val, key) :
+    c = val[-key:]
+    out = c + val[len(encrypt)-key:]
+    return out
 
-while True:
-    line = input()
-    if line == "":
-        break
-    lines.append(line)
+while encrypt != "":
+    scram = scrambleIt(encrypt, key)
+    encrypt = input("Say a message to encrypt: ")
+    encryption.append(scram)
 
-text = "\n".join(lines)
-print("\nYou entered:\n" + text)
+print(encryption)
+
