@@ -4,7 +4,7 @@ encryption = []
 
 def scrambleIt(val, key) :
     c = val[-key:]
-    out = c + val[len(encrypt)-key:]
+    out = c + val[:len(encrypt)-key:]
     return out
 
 while encrypt != "":
@@ -12,5 +12,6 @@ while encrypt != "":
     encrypt = input("Say a message to encrypt: ")
     encryption.append(scram)
 
-print(encryption)
+for e in encryption:
+    print(e)
 
